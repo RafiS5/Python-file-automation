@@ -1,6 +1,6 @@
 # Overview
 
-This file automater is a python script that monitors the downloads folder for file movements. Depending on the file endings (at the moment endings such as .stats, .docx.stats, .doc.stats, .stats.docx, or .stats.doc), files will be moved to the allocated folder. This is particularly useful for organizing files in real-time, such as keeping track of documents for a specific course or project
+This file automater is a python script that monitors the downloads folder for file movements. Depending on the file endings (at the moment endings such as .stats, .docx.stats, .doc.stats, .stats.docx, or .stats.doc, .DSA, .query), files will be moved to the allocated folder. This is particularly useful for organizing files in real-time, such as keeping track of documents for a specific course or project. The file ending relate to my second year modules, allowing me to stay organized.
 
 # Features
 
