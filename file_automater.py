@@ -16,11 +16,18 @@ with open('file_extensions.json' , 'r') as config_file:
 class MyEventHandler(LoggingEventHandler):
     def on_moved(self, event):
 
+        target_dest_path = None 
+
         for file_ending in config:
-            if event.dest_path.endswith(file_ending):
+            if event.dest_path.lower().endswith(file_ending.lower()):
+                print(f"Checking if {event.dest_path} ends with {file_ending}")
                 target_file_ending = file_ending
                 target_dest_path = config[file_ending] # Target file path and ending have been found
                 break
+
+        if target_dest_path is None:
+            print(f"No matching file extension found for {event.dest_path}")
+            return
 
         destination_folder = target_dest_path
         destination = os.path.join(destination_folder,  os.path.basename(event.dest_path))
@@ -35,7 +42,6 @@ class MyEventHandler(LoggingEventHandler):
         else:
             print(f"File {event.dest_path} no longer exists.")
 
-    
 
 if __name__ == "__main__":
 
