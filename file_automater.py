@@ -8,7 +8,6 @@ from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler 
 
 
-
 with open('file_extensions.json' , 'r') as config_file:
     config = json.load(config_file) # File extension folder succcessfully loaded in ay python dictionary
 
